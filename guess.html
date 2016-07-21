@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Title</title>
+	<link rel="stylesheet"  href="style.css">
+
+   <script type="text/javascript">
+      
+               function Play(){
+
+          		var min=1;
+				var max=100;
+				var guessNumber=Math.floor(Math.random()*(max-min+1))+min;
+				
+				var tryCount=0;//Номер попытки
+				var userAnswer;
+				do
+				{
+				tryCount=tryCount+1;//Увеличиваем количество попыток на единицу
+				userAnswer=+prompt(tryCount+"попытка.Ваш вариант:");
+				if(userAnswer>guessNumber)
+				alert("Перелет");
+				if(userAnswer<guessNumber)
+				alert("Недолет");
+				}
+				while(userAnswer!=guessNumber&&tryCount<7);
+				if(userAnswer==guessNumber)
+					alert("Поздравляем!Вы угадали!");
+				else alert("Вы проиграли!Попробуйте еще раз");
+			}
+
+   </script>
+
+</head>
+<body>
+	<div id="header">
+		<a href="index.html">Главная</a><span>/</span>
+		<a href="puzzle.html">Загадки</a><span>/</span>
+		<a href="guess.html">Угадайка</a><span>/</span>
+		<a href="guess-2.html">Угадайка мультиплеер</a>
+	</div>
+
+<div id="content">
+ 	<h1>Угадайка мультиплеер</h1>
+   
+ 		<div id="box">	
+   		
+
+   			<h2>Компьютер загадал число от 1до 100.Угадайте его за 7попыток </h2>
+
+            
+
+            <a href="#" onclick="Play()">Начать игру</a>
+
+   					
+
+   					
+   	<br></br>
+
+   			</div>
+   </div>
+</div>
+
+   <div id="footer">
+   	
+   		Copyright © 2016 <a href="https://geekbrains.ru" target="_blank">GeekBrains</a>
+   </div>
+   
+</body>
+</html>
